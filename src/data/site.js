@@ -17,26 +17,22 @@ export const site = {
   homeSections: [
     { title: 'Photographer' },
   ],
-  // Curated vertical photographs for the continuous curved homepage strip.
+  // Shreesh's selected vertical photographs, in the supplied order.
   homePhotoIds: [
-    '1K26nQ9x7r7yiT60ZPXPI-1d2nH-aOvVU', // Seedhe Maut
-    '1pyP9ojGQaJMW8ztJ_jrofn5YOMr-k2pU', // Banaras
-    '17YPOWifzNtmnKid5Fl6pjX4sP8NWYfOs', // HPL
-    '1jKuDsWU27ISz5UUd8LNsndiqqehBMwSk', // Bikes
-    '1RwNwGpKi9k-bz8NyTSHCM2z5_zSSDW9m', // Street
-    '1YkfulSIBR5Jt62rQTl_IMixp7ynnblzH', // Indian Open
-    '1SFAo6RKkSIqQ3YuMTdSZoKNIm0qFrUna', // Wildlife
-    '1_sT4gK9cVaulFMCzXjOe0Z21HhF0ahWK', // State of the League
-    '1nvorBuxUu3z8C2UG7AL4rZy21AxZHdiQ', // HPL Auction
-    '1dqsfht3fT35tCmd5f9bVY6PX1qIWpJCT',
-    '1q6icIBN56E4qSRFnS9WyQCdh317Xxpun',
-    '1Qr7NH-TNa8VY8Qa28utQAw_kszkwnoKn',
-    '1OLV2xyMyMVyhmKx4sX1PRemIFt5ZeNIR',
-    '176KHO5nRinaKwOVtpPCMEd9kMqCLPMZ2',
-    '1E7nMtrN3CX-66GXs6qCaQ1-HVsgx-wcZ',
-    '1pxUsrlbHl2KGYHvjDBqO9-IT1tMG_vux',
-    '16gzV_XorSsx4NPDS2Oa_-kQdo0IhHLCL',
-    '1KbqVSXB7pvehfFpILTDukC9WeHRdqwmP',
+    '1lFzGqyjPZuAm-SB-CmxFvzg8HQ5iMMUN', // IMG_4141.JPG
+    '1K26nQ9x7r7yiT60ZPXPI-1d2nH-aOvVU', // IMG_4140.JPG
+    '1pyP9ojGQaJMW8ztJ_jrofn5YOMr-k2pU', // IMG_2945.JPG
+    '1MkrnNVen-LAnYU5nPnr-bajP68_zgc8g', // IMG_5115.jpg
+    '17YPOWifzNtmnKid5Fl6pjX4sP8NWYfOs', // IMG_3791.JPG
+    '1Opfm-Fs0zSez_U-9UdTFJW1Nxmcg-_l8', // 1E6E9848-40DF-4675-861B-E274B35282CE.JPG
+    '1OLV2xyMyMVyhmKx4sX1PRemIFt5ZeNIR', // IMG_4467.jpg
+    '1RwNwGpKi9k-bz8NyTSHCM2z5_zSSDW9m', // IMG_0027.jpg
+    '1YN6DeFmogqrwzcPeumVVp0VnRpBl6R_z', // IMG_0480.jpg
+    '1YkfulSIBR5Jt62rQTl_IMixp7ynnblzH', // IMG_0326.jpg
+    '1JNFamGDvEkH6WDUGIJD9Ia4CzqLUWArb', // 19F23769-B0BF-4687-A29C-A9F7158CA13C.png
+    '1SFAo6RKkSIqQ3YuMTdSZoKNIm0qFrUna', // IMG_5037.jpg
+    '1liabeCP7xxARP-RB6pyTkFuGISmC-MEQ', // IMG_4699.jpg
+    '1SOyh_Ro2thlLCqqe-BmGA-5WLRk0YG-F', // IMG_4898.jpg
   ],
   // Lead the dropdown with visual impact, then show the range of the portfolio.
   collectionNavigationOrder: [

@@ -2,7 +2,7 @@
 
 A photography portfolio built with React, Vite, Tailwind CSS, and React Router. The live catalog contains 163 actual photographs imported through authorized Google Drive access, including the final 18-image HPL Auction collection. No stock or generated photographs. Home and About use the supplied photographer portrait from `Photograph/IMG_0252 (3).PNG`, with responsive local WebP copies in `public/images/photographer/` and the original proportions preserved.
 
-The current design follows Sean Tucker's website at the user's request: locally hosted Archivo Black headings, Georgia body copy, a pale grey background throughout, a split introduction with rounded portrait, and repeated section titles. The homepage featured collections now use the user's supplied curved photo-strip component, adapted to this React/Vite project with 18 curated portrait-format photographs spanning all nine collections. Work uses compact covers in four desktop columns, three tablet columns, and two mobile columns, following the ranked navigation order. Font licenses are included in `public/fonts/`.
+The current design follows Sean Tucker's website at the user's request: locally hosted Archivo Black headings, Georgia body copy, a pale grey background throughout, a split introduction with rounded portrait, and repeated section titles. The homepage featured collections now use the user's supplied curved photo-strip component, adapted to this React/Vite project with 14 portrait-format photographs selected by Shreesh, displayed in the supplied order. Work uses compact covers in four desktop columns, three tablet columns, and two mobile columns, following the ranked navigation order. Font licenses are included in `public/fonts/`.
 
 ## Preview in VS Code on this computer
 
