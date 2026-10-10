@@ -1,0 +1,13 @@
+{
+  "collection": "HPL_Auction",
+  "galleryTitle": "HPL Auction",
+  "targetCount": { "min": 12, "max": 18 },
+  "status": "Provisional shortlist only. Visual review pending; order is a proposed sequence, not a verified visual curation. No additional photographs selected.",
+  "images": [
+    { "driveFileId": "1HNqd88jZmKMxLySK05WWXlJwCtV3ucJH", "filename": "IMG_5690.jpg", "collection": "HPL_Auction", "sourceSubfolder": "Auctioneer", "displayOrder": 1, "caption": "", "published": false, "approvedChecksum": null },
+    { "driveFileId": "1l5W47LHkt4H8nAc-7USjlWqFXe2KF2vQ", "filename": "IMG_5654.jpg", "collection": "HPL_Auction", "sourceSubfolder": "Teams", "displayOrder": 2, "caption": "", "published": false, "approvedChecksum": null },
+    { "driveFileId": "1HP0Byl0ZcPQSVRbIxRO97lhiK7THH7_0", "filename": "IMG_5614.jpg", "collection": "HPL_Auction", "sourceSubfolder": "Celebs", "displayOrder": 3, "caption": "", "published": false, "approvedChecksum": null },
+    { "driveFileId": "1D_NrnUy_jkx2aoOMKwRRBSUq9xqVj8PV", "filename": "IMG_5493.jpg", "collection": "HPL_Auction", "sourceSubfolder": "Teams", "displayOrder": 4, "caption": "", "published": false, "approvedChecksum": null },
+    { "driveFileId": "11vPNVh7teZfx5dt_yzJejUSbjbEzAYf-", "filename": "IMG_5672.jpg", "collection": "HPL_Auction", "sourceSubfolder": "Teams", "displayOrder": 5, "caption": "", "published": false, "approvedChecksum": null }
+  ]
+}

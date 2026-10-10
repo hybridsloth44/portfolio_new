@@ -1,0 +1,19 @@
+{
+  "enabled": false,
+  "rootFolderId": "1muTIn3G0xFsNL9-CMPiHQEQcnIll0Mu9",
+  "excludedFolderNames": ["HPL_Day1"],
+  "folderIds": {
+    "seedhemaut2026": "1cD465g5o6piS1M312qAwLwe0w5Q3gYYT",
+    "banaras-2025": "1I7XR9xTqC30-cl6bCLzF1TM7C5NWTZro",
+    "bikes": "1M5kPAsYmsQ1zq_mo7WTzJtXG5zRZqKvf",
+    "hyderabad-padel-league": "11UXK-TlYiUa7o9ranYuN507dQ9V3anvg",
+    "pickleball-indian-open-2026": "19qEQOrvX34Gr0LgRHszGvAhDSMkQ875w",
+    "state-of-the-league-pickleball": "1XusUwpETtwIBbJfoOepN5ywt-56a9QGN",
+    "wildlife": "1T_uJrDfkxRR3x5l3zGKuY5uWn2eSPK-7",
+    "street-photography": "1C-OshCJhqwEAjWs4_JKNazXSiTEAVq1d",
+    "hpl-auction": "1vRkHX41TIUvF4AW5AGGl-mwRJriGw_l5"
+  },
+  "regularCollections": { "publishNew": true, "excludedFileIds": [] },
+  "maxUploadsPerRun": 500,
+  "maxImageBytes": 78643200
+}
