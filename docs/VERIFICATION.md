@@ -1,5 +1,11 @@
 # Portfolio verification
 
+## Larger About page - 11 October 2026
+
+Expanded the About composition from an 800px maximum to 1160px, enlarged the uncropped portrait from 300px to 480px, and increased the name heading to 30–42px and body text to 16–18px. Desktop portrait and copy are vertically centered. Mobile stacks the content with a centered portrait up to 320px wide. Other page typography is unchanged.
+
+The production build passed. Production-preview browser checks passed at 320, 375, 768, 1024, 1440, and 1920px for overflow, portrait proportions, desktop column centering, mobile stacking, and contact destinations. Desktop/mobile screenshots were inspected.
+
 ## Balanced landing-page margins - 11 October 2026
 
 Balanced the hero grid into equal columns, with the text anchored to its left edge and the portrait to its right edge. This gives equal outer margins while preserving the portrait's previous size. The headline, social icons, and View Work link share one center line. Verified equal outer margins to within one pixel at 768, 1024, 1240, 1440, and 1920px; mobile layouts at 320/375px, below-screen marquee positioning, portrait proportions, and homepage card alignment also passed. Inspected the desktop screenshot. Production build passed.
