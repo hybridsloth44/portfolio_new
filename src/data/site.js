@@ -15,7 +15,28 @@ export const site = {
   introduction: 'I’m Shreesh. I photograph the things that catch my eye — the energy of a concert, a moment on the court, or an ordinary street in a new place.',
   biography: 'My interests span concerts, sports, travel, wildlife, street photography, and automobiles. This is a collection of what I see along the way.',
   homeSections: [
-    { title: 'Photographer', slugs: ['seedhemaut2026', 'banaras-2025', 'street-photography'] },
+    { title: 'Photographer' },
+  ],
+  // Curated vertical photographs for the continuous curved homepage strip.
+  homePhotoIds: [
+    '1K26nQ9x7r7yiT60ZPXPI-1d2nH-aOvVU', // Seedhe Maut
+    '1pyP9ojGQaJMW8ztJ_jrofn5YOMr-k2pU', // Banaras
+    '17YPOWifzNtmnKid5Fl6pjX4sP8NWYfOs', // HPL
+    '1jKuDsWU27ISz5UUd8LNsndiqqehBMwSk', // Bikes
+    '1RwNwGpKi9k-bz8NyTSHCM2z5_zSSDW9m', // Street
+    '1YkfulSIBR5Jt62rQTl_IMixp7ynnblzH', // Indian Open
+    '1SFAo6RKkSIqQ3YuMTdSZoKNIm0qFrUna', // Wildlife
+    '1_sT4gK9cVaulFMCzXjOe0Z21HhF0ahWK', // State of the League
+    '1nvorBuxUu3z8C2UG7AL4rZy21AxZHdiQ', // HPL Auction
+    '1dqsfht3fT35tCmd5f9bVY6PX1qIWpJCT',
+    '1q6icIBN56E4qSRFnS9WyQCdh317Xxpun',
+    '1Qr7NH-TNa8VY8Qa28utQAw_kszkwnoKn',
+    '1OLV2xyMyMVyhmKx4sX1PRemIFt5ZeNIR',
+    '176KHO5nRinaKwOVtpPCMEd9kMqCLPMZ2',
+    '1E7nMtrN3CX-66GXs6qCaQ1-HVsgx-wcZ',
+    '1pxUsrlbHl2KGYHvjDBqO9-IT1tMG_vux',
+    '16gzV_XorSsx4NPDS2Oa_-kQdo0IhHLCL',
+    '1KbqVSXB7pvehfFpILTDukC9WeHRdqwmP',
   ],
   // Lead the dropdown with visual impact, then show the range of the portfolio.
   collectionNavigationOrder: [
