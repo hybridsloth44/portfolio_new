@@ -14,8 +14,8 @@ from pathlib import Path
 from PIL import Image, ImageCms, ImageDraw, ImageOps
 
 ROOT = Path(__file__).resolve().parent.parent
-inventory = json.loads((ROOT / '.sync/inventory.json').read_text())
-collections = json.loads((ROOT / 'src/data/collections.json').read_text())
+inventory = json.loads((ROOT / '.sync/inventory.json').read_text(encoding='utf-8'))
+collections = json.loads((ROOT / 'src/data/collections.json').read_text(encoding='utf-8'))
 titles = {c['slug']: c.get('galleryTitle', c['title']) for c in collections}
 groups = defaultdict(list)
 for item in inventory:
@@ -78,6 +78,14 @@ for slug, items in groups.items():
     sheet.save(review / f'{slug}.jpg', quality=88)
     print(f'Prepared {slug}: {len(items)} photos', flush=True)
 
+# Retain only manually published auction revisions that still match their approvals.
+# A regular re-import must neither remove the reviewed gallery nor restore a revoked image.
+existing = json.loads((ROOT / 'public/portfolio.json').read_text(encoding='utf-8'))
+approvals = {p['driveFileId']: p for p in json.loads((ROOT / 'config/curated-hpl-auction.json').read_text(encoding='utf-8'))['images']}
+for photo in existing['photos']:
+    approval = approvals.get(photo['id'])
+    if photo['collection'] == 'hpl-auction' and approval and approval['published'] and approval.get('approvedChecksum') == photo.get('sourceChecksum') and approval.get('approvedChecksum'):
+        photos.append({**photo, 'displayOrder': approval['displayOrder'], 'caption': approval['caption'], 'alt': approval['caption'] or photo['alt']})
 catalog = {'schemaVersion': 1, 'mode': 'live', 'generatedAt': datetime.now(timezone.utc).isoformat(), 'photos': photos}
 temporary = ROOT / 'public/portfolio.json.tmp'
 temporary.write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')

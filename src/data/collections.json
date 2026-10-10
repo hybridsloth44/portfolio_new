@@ -1,11 +1,84 @@
 [
-  {"slug":"seedhemaut2026","folderName":"SeedheMaut2026","title":"SeedheMaut2026","category":"Concerts","previewCount":6,"coverPhotoId":"1K26nQ9x7r7yiT60ZPXPI-1d2nH-aOvVU","publishing":"automatic"},
-  {"slug":"hpl-auction","folderName":"HPL_Auction","title":"HPL_Auction","galleryTitle":"HPL Auction","category":"Events","previewCount":5,"coverPhotoId":null,"publishing":"manual"},
-  {"slug":"banaras-2025","folderName":"Banaras 2025","title":"Banaras 2025","category":"Travel","previewCount":6,"coverPhotoId":"1pyP9ojGQaJMW8ztJ_jrofn5YOMr-k2pU","publishing":"automatic"},
-  {"slug":"bikes","folderName":"Bikes","title":"Bikes","category":"Automobiles","previewCount":6,"coverPhotoId":"1jKuDsWU27ISz5UUd8LNsndiqqehBMwSk","publishing":"automatic"},
-  {"slug":"hyderabad-padel-league","folderName":"Hyderabad Padel League","title":"Hyderabad Padel League","category":"Sports","previewCount":6,"coverPhotoId":"17YPOWifzNtmnKid5Fl6pjX4sP8NWYfOs","publishing":"automatic"},
-  {"slug":"pickleball-indian-open-2026","folderName":"Pickleball Indian Open 2026","title":"Pickleball Indian Open 2026","category":"Sports","previewCount":6,"coverPhotoId":"1YkfulSIBR5Jt62rQTl_IMixp7ynnblzH","publishing":"automatic"},
-  {"slug":"state-of-the-league-pickleball","folderName":"State of the League Pickleball","title":"State of the League Pickleball","category":"Sports","previewCount":6,"coverPhotoId":"1_sT4gK9cVaulFMCzXjOe0Z21HhF0ahWK","publishing":"automatic"},
-  {"slug":"wildlife","folderName":"Wildlife","title":"Wildlife","category":"Wildlife","previewCount":6,"coverPhotoId":"1SFAo6RKkSIqQ3YuMTdSZoKNIm0qFrUna","publishing":"automatic"},
-  {"slug":"street-photography","folderName":"Street Photography","title":"Street Photography","category":"Street","previewCount":6,"coverPhotoId":"1RwNwGpKi9k-bz8NyTSHCM2z5_zSSDW9m","publishing":"automatic"}
+  {
+    "slug": "seedhemaut2026",
+    "folderName": "SeedheMaut2026",
+    "title": "SeedheMaut2026",
+    "category": "Concerts",
+    "previewCount": 6,
+    "coverPhotoId": "1K26nQ9x7r7yiT60ZPXPI-1d2nH-aOvVU",
+    "publishing": "automatic"
+  },
+  {
+    "slug": "hpl-auction",
+    "folderName": "HPL_Auction",
+    "title": "HPL_Auction",
+    "galleryTitle": "HPL Auction",
+    "category": "Events",
+    "previewCount": 18,
+    "coverPhotoId": "1nvorBuxUu3z8C2UG7AL4rZy21AxZHdiQ",
+    "publishing": "manual"
+  },
+  {
+    "slug": "banaras-2025",
+    "folderName": "Banaras 2025",
+    "title": "Banaras 2025",
+    "category": "Travel",
+    "previewCount": 6,
+    "coverPhotoId": "1pyP9ojGQaJMW8ztJ_jrofn5YOMr-k2pU",
+    "publishing": "automatic"
+  },
+  {
+    "slug": "bikes",
+    "folderName": "Bikes",
+    "title": "Bikes",
+    "category": "Automobiles",
+    "previewCount": 6,
+    "coverPhotoId": "1jKuDsWU27ISz5UUd8LNsndiqqehBMwSk",
+    "publishing": "automatic"
+  },
+  {
+    "slug": "hyderabad-padel-league",
+    "folderName": "Hyderabad Padel League",
+    "title": "Hyderabad Padel League",
+    "category": "Sports",
+    "previewCount": 6,
+    "coverPhotoId": "17YPOWifzNtmnKid5Fl6pjX4sP8NWYfOs",
+    "publishing": "automatic"
+  },
+  {
+    "slug": "pickleball-indian-open-2026",
+    "folderName": "Pickleball Indian Open 2026",
+    "title": "Pickleball Indian Open 2026",
+    "category": "Sports",
+    "previewCount": 6,
+    "coverPhotoId": "1YkfulSIBR5Jt62rQTl_IMixp7ynnblzH",
+    "publishing": "automatic"
+  },
+  {
+    "slug": "state-of-the-league-pickleball",
+    "folderName": "State of the League Pickleball",
+    "title": "State of the League Pickleball",
+    "category": "Sports",
+    "previewCount": 6,
+    "coverPhotoId": "1_sT4gK9cVaulFMCzXjOe0Z21HhF0ahWK",
+    "publishing": "automatic"
+  },
+  {
+    "slug": "wildlife",
+    "folderName": "Wildlife",
+    "title": "Wildlife",
+    "category": "Wildlife",
+    "previewCount": 6,
+    "coverPhotoId": "1SFAo6RKkSIqQ3YuMTdSZoKNIm0qFrUna",
+    "publishing": "automatic"
+  },
+  {
+    "slug": "street-photography",
+    "folderName": "Street Photography",
+    "title": "Street Photography",
+    "category": "Street",
+    "previewCount": 6,
+    "coverPhotoId": "1RwNwGpKi9k-bz8NyTSHCM2z5_zSSDW9m",
+    "publishing": "automatic"
+  }
 ]

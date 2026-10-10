@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, access } from 'node:fs/promises';
 import { selectPublished, isExcludedFolder, deliveryUrl } from '../scripts/sync-policy.mjs';
 
 const collections = JSON.parse(await readFile(new URL('../src/data/collections.json', import.meta.url)));
@@ -16,11 +16,33 @@ test('exact nine allowed collections and no excluded gallery', () => {
 test('excluded trees and unrecognized collections cannot publish', () => {
   assert.deepEqual(selectPublished([image({ path: ['Wildlife', 'HPL_Day1'] }), image({ collection: 'unknown' })], collections, curated, config), []);
 });
-test('five supplied auction IDs remain provisional and unpublished', () => {
-  assert.equal(curated.images.length, 5);
-  assert.ok(curated.images.every((photo) => !photo.published && !photo.approvedChecksum));
-  const files = curated.images.map((photo) => image({ id: photo.driveFileId, name: photo.filename, collection: 'hpl-auction', path: ['HPL_Auction', photo.sourceSubfolder] }));
-  assert.deepEqual(selectPublished(files, collections, curated, config), []);
+test('final auction selection is revision-bound and publishes in curated order', () => {
+  assert.ok(curated.images.length >= curated.targetCount.min && curated.images.length <= curated.targetCount.max);
+  assert.equal(new Set(curated.images.map((photo) => photo.driveFileId)).size, curated.images.length);
+  assert.ok(curated.images.every((photo) => photo.published && /^[a-f0-9]{32}$/.test(photo.approvedChecksum)));
+  const files = curated.images.map((photo) => image({ id: photo.driveFileId, name: photo.filename, md5Checksum: photo.approvedChecksum, collection: 'hpl-auction', path: ['HPL_Auction', photo.sourceSubfolder] }));
+  const published = selectPublished(files.reverse(), collections, curated, config);
+  assert.deepEqual(published.map((photo) => photo.id), curated.images.map((photo) => photo.driveFileId));
+  assert.deepEqual(published.map((photo) => photo.displayOrder), Array.from({ length: curated.images.length }, (_, i) => i + 1));
+});
+
+test('published auction catalog and portrait cover match the final reviewed selection', async () => {
+  const catalog = JSON.parse(await readFile(new URL('../public/portfolio.json', import.meta.url)));
+  const auction = catalog.photos.filter((photo) => photo.collection === 'hpl-auction');
+  assert.equal(auction.length, curated.images.length);
+  for (const approval of curated.images) {
+    const photo = auction.find((item) => item.id === approval.driveFileId);
+    assert.ok(photo?.published);
+    assert.equal(photo.sourceChecksum, approval.approvedChecksum);
+    assert.equal(photo.displayOrder, approval.displayOrder);
+    assert.equal(photo.caption, approval.caption);
+    for (const url of new Set([photo.src, photo.fullSrc, ...photo.srcSet.split(', ').map((entry) => entry.split(' ')[0])])) {
+      assert.ok(url.startsWith('/images/hpl-auction/'));
+      await access(new URL(`../public${url}`, import.meta.url));
+    }
+  }
+  const cover = auction.find((photo) => photo.id === collections.find((collection) => collection.slug === 'hpl-auction').coverPhotoId);
+  assert.ok(cover && cover.height > cover.width);
 });
 test('auction requires explicit publication and exact approved revision', () => {
   const approval = { driveFileId: 'auction', filename: 'photo.jpg', collection: 'HPL_Auction', displayOrder: 3, published: true, approvedChecksum: 'reviewed' };

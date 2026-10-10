@@ -1,6 +1,6 @@
-# Vercel preparation
+# Vercel deployment
 
-No site has been deployed. The current 145-photo static catalog can be deployed with the optimized `public/images/` assets. Review the frontend and photographs first. Cloudinary and unattended synchronization are optional subsequent infrastructure and remain unconfigured.
+GitHub repository `hybridsloth44/portfolio_new` is connected to Vercel project `portfolio-new` under `weeeeeiiiiiiiiiii44s-projects`. Pushes to `main` trigger production deployments. The About-page enlargement deployed successfully from commit `f8d10c5`; the final HPL Auction update contains 163 portfolio photographs in total. Confirm the Vercel GitHub status and deployment SHA after each push. Cloudinary and unattended synchronization remain unconfigured.
 
 1. Put this project in your own Git repository. Keep `.env`, `.tools`, `.sync`, and `node_modules` out of Git; `.gitignore` is included. Never place server secrets in Vite environment variables.
 2. Run `npm ci`, `npm test`, and `npm run build`. Review `npm run preview` with real photographs on desktop and mobile. Test a direct visit/refresh to `/work/banaras-2025`.

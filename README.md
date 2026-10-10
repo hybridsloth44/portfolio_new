@@ -1,6 +1,6 @@
 # Shreesh — Photography
 
-A photography portfolio built with React, Vite, Tailwind CSS, and React Router. The live catalog contains 145 actual photographs imported through authorized Google Drive access on 10 October 2026. No stock or generated photographs. Home and About use the supplied photographer portrait from `Photograph/IMG_0252 (3).PNG`, with responsive local WebP copies in `public/images/photographer/` and the original proportions preserved.
+A photography portfolio built with React, Vite, Tailwind CSS, and React Router. The live catalog contains 163 actual photographs imported through authorized Google Drive access, including the final 18-image HPL Auction collection. No stock or generated photographs. Home and About use the supplied photographer portrait from `Photograph/IMG_0252 (3).PNG`, with responsive local WebP copies in `public/images/photographer/` and the original proportions preserved.
 
 The current design follows Sean Tucker's website at the user's request: locally hosted Archivo Black headings, Georgia body copy, a pale grey background throughout, a split introduction with rounded portrait, repeated section titles, and three-column homepage collections. Work uses compact covers in four desktop columns, three tablet columns, and two mobile columns, following the ranked navigation order. The original charcoal direction has been superseded. Font licenses are included in `public/fonts/`. Collection names inside preview image blocks are placeholder labels; they disappear when real photographs are supplied.
 
@@ -47,7 +47,7 @@ On this computer without Node on PATH, substitute `powershell -NoProfile -Execut
 | `src/data/site.js` | Biography, homepage introduction, announcement, real email, Instagram URL, portrait, collection sections and descriptions |
 | `src/data/collections.json` | Collection metadata, collection cover IDs; preserve the exact Drive folder names |
 | `public/portfolio.json` | Public image catalog: local paths or approved CDN URLs with actual pixel dimensions |
-| `config/curated-hpl-auction.json` | Five provisional auction selections, order, captions, approval revision and published status |
+| `config/curated-hpl-auction.json` | Final 18-image auction selection, sequence, factual captions, approved revision and publication status |
 | `config/sync.json` | Server-side folder mapping and publishing policy; sync starts disabled |
 | `src/styles/index.css` | Typography, spacing, breakpoints, and light palette |
 
@@ -55,13 +55,13 @@ On this computer without Node on PATH, substitute `powershell -NoProfile -Execut
 
 Instagram links to `https://www.instagram.com/shreeshhhhhhh/?hl=en`; direct email links use `skambampally@gmail.com`. Contact has a responsive message form matching the supplied reference. EmailJS submission code is implemented, but delivery remains inactive until the connected Gmail Service ID, Template ID, and Public Key are configured. See [docs/CONTACT.md](docs/CONTACT.md) for account setup, template settings, and the three public environment variables. No Gmail password or private key is used in the browser.
 
-`HPL_Auction` is preserved as the folder/collection name; its dedicated gallery is titled **HPL Auction** as requested. The five supplied files are the only shortlisted auction photos. They are unpublished pending review; the initial sequence is provisional. The final 12–18 image curation requires visual review of the actual photographs. There are no auction subpages or filters. The excluded folder has no frontend collection or route and is rejected during recursive synchronization.
+`HPL_Auction` is preserved as the folder/collection name; its dedicated gallery is titled **HPL Auction**. The final 18-image sequence was selected after visually reviewing 221 originals across Auctioneer, Teams, Celebs, Others, and Venue Partner. It retains the five initial shortlisted files and adds bidding, reactions, event context, and a closing trophy photograph. A real portrait cover replaces the placeholder. Each approved revision is bound to the MD5 of the downloaded, reviewed original. There are no auction subpages or filters. The excluded folder has no frontend collection or route and is rejected during recursive synchronization.
 
 ### Local photographs
 
-The eight regular collections now use optimized local WebP copies in `public/images/`, with responsive sizes, actual dimensions, and original Drive filenames/IDs in `public/portfolio.json`. EXIF orientation is applied and embedded metadata is omitted from public copies. Original files remain unchanged in Drive. The excluded folder was not traversed. HPL Auction remains unpublished pending manual review.
+All nine collections use optimized local WebP copies in `public/images/`, with responsive sizes, actual dimensions, and original Drive filenames/IDs in `public/portfolio.json`. EXIF orientation is applied and embedded metadata is omitted from public copies. Original files remain unchanged in Drive. The excluded folder was not traversed.
 
-The one-time import tools are `scripts/download-import.mjs` and `scripts/prepare-local-photos.py`. The downloader consumes temporary signed references from connected Drive access in ignored `.sync/downloads.json`; those references are removed after download and must never be committed. The preparation script requires Pillow and consumes `.sync/inventory.json` plus `.sync/originals/`. It validates the complete inventory before publishing and creates ignored contact sheets for choosing covers. These tools are separate from the production synchronization runner.
+The one-time import tools are `scripts/download-import.mjs` and `scripts/prepare-local-photos.py`. The downloader consumes temporary signed references from connected Drive access in ignored `.sync/downloads.json`; those references are removed after download and must never be committed. The preparation script requires Pillow and consumes `.sync/inventory.json` plus `.sync/originals/`. It validates the complete inventory before publishing and creates ignored contact sheets for choosing covers, retaining approved auction revisions. `scripts/prepare-auction-photos.py` rebuilds the final auction selection from the curated manifest and ignored originals, rejects changed revisions, and preserves other collections. These tools are separate from the production synchronization runner.
 
 For future authorized local additions, use entries such as:
 
@@ -94,7 +94,7 @@ The filename and dimensions above are a schema example, not a selected photograp
 
 **Connected Google Drive access has been tested and the initial 145-photo import is complete.** Drive originals were read only. The unattended OAuth runner, Cloudinary uploads, and scheduled synchronization are **not configured or tested**. The verified folder IDs are recorded in `config/sync.json`, which remains disabled. The frontend serves local optimized copies through `/portfolio.json`; it never receives OAuth/Cloudinary secrets or temporary Drive download references.
 
-Read [docs/SYNC.md](docs/SYNC.md) for the prepared read-only sync runner, review workflow, automatic scheduling architecture, deletion behavior, and failure handling. Read [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for Vercel preparation. Nothing is deployed. The current local image assets can be deployed statically; automatic updates require the separate synchronization setup.
+Read [docs/SYNC.md](docs/SYNC.md) for the prepared read-only sync runner, review workflow, automatic scheduling architecture, deletion behavior, and failure handling. The repository `hybridsloth44/portfolio_new` is connected to Vercel project `portfolio-new`; pushes to `main` trigger production deployments. See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md). Automatic Drive updates require the separate synchronization setup.
 
 ## Features
 

@@ -85,7 +85,15 @@ After the Sean Tucker layout rebuild, browser checks passed again at 320, 375, 7
 - No uncaught browser errors occurred. Desktop and mobile screenshots were inspected.
 - Disabled sync invocation refused to run before making remote requests.
 
-Still pending: final auction curation and approval, portrait, Cloudinary uploads, unattended OAuth authentication, scheduled synchronization, real contact destinations, and Vercel deployment. Connected Drive access and the local image import are verified above.
+Historical pending items at that stage: final auction curation and approval, portrait, Cloudinary uploads, unattended OAuth authentication, scheduled synchronization, real contact destinations, and Vercel deployment. Subsequent updates below supersede these where completed.
+
+## Final HPL Auction collection — 11 October 2026
+
+- Reviewed 221 actual photographs across Auctioneer (26), Teams (95), Celebs (26), Others (72), and Venue Partner (2). Selected and sequenced 18, retaining the five original shortlist entries. The excluded folder was not traversed; Drive originals were read only.
+- Replaced the placeholder cover with the portrait `IMG_5481.jpg`. Added factual captions and responsive WebP assets with orientation applied, original ratios preserved, and embedded metadata omitted. The catalog now contains 163 photographs; all 145 pre-existing regular photo entries remain unchanged.
+- The final manifest binds publication to MD5 checksums of the reviewed original bytes. The auction preparation tool rejects changed revisions and preserves other collections; regular imports retain only still-approved auction revisions. Temporary download references were removed after import.
+- Eight publishing-policy/catalog tests and the Vite production build passed. Chrome checks at 320, 375, 768, 1440, and 1920 pixels verified all 18 images loading, original aspect ratios, compact row heights, no horizontal overflow, the real Work cover, viewer indexing, arrow navigation, wrapping, and Escape. Desktop/mobile screenshots were visually reviewed.
+- GitHub `main` is connected to Vercel production deployments. The preceding About-page enlargement deployed successfully from `f8d10c5`.
 
 Local-only testing dependencies and screenshots are under ignored `.tools/qa/`; they are not bundled into the website. Repeatable policy tests are included in `tests/` and run with `npm test`.
 

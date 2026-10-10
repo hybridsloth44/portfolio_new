@@ -1,13 +1,191 @@
 {
   "collection": "HPL_Auction",
   "galleryTitle": "HPL Auction",
-  "targetCount": { "min": 12, "max": 18 },
-  "status": "Provisional shortlist only. Visual review pending; order is a proposed sequence, not a verified visual curation. No additional photographs selected.",
+  "targetCount": {
+    "min": 12,
+    "max": 18
+  },
+  "status": "Final: 18 photographs visually reviewed and sequenced from 221 HPL Auction originals; published at the user's request.",
   "images": [
-    { "driveFileId": "1HNqd88jZmKMxLySK05WWXlJwCtV3ucJH", "filename": "IMG_5690.jpg", "collection": "HPL_Auction", "sourceSubfolder": "Auctioneer", "displayOrder": 1, "caption": "", "published": false, "approvedChecksum": null },
-    { "driveFileId": "1l5W47LHkt4H8nAc-7USjlWqFXe2KF2vQ", "filename": "IMG_5654.jpg", "collection": "HPL_Auction", "sourceSubfolder": "Teams", "displayOrder": 2, "caption": "", "published": false, "approvedChecksum": null },
-    { "driveFileId": "1HP0Byl0ZcPQSVRbIxRO97lhiK7THH7_0", "filename": "IMG_5614.jpg", "collection": "HPL_Auction", "sourceSubfolder": "Celebs", "displayOrder": 3, "caption": "", "published": false, "approvedChecksum": null },
-    { "driveFileId": "1D_NrnUy_jkx2aoOMKwRRBSUq9xqVj8PV", "filename": "IMG_5493.jpg", "collection": "HPL_Auction", "sourceSubfolder": "Teams", "displayOrder": 4, "caption": "", "published": false, "approvedChecksum": null },
-    { "driveFileId": "11vPNVh7teZfx5dt_yzJejUSbjbEzAYf-", "filename": "IMG_5672.jpg", "collection": "HPL_Auction", "sourceSubfolder": "Teams", "displayOrder": 5, "caption": "", "published": false, "approvedChecksum": null }
+    {
+      "driveFileId": "1nvorBuxUu3z8C2UG7AL4rZy21AxZHdiQ",
+      "filename": "IMG_5481.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Auctioneer",
+      "displayOrder": 1,
+      "caption": "The auctioneer at the Hyderabad Padel League podium.",
+      "published": true,
+      "approvedChecksum": "8677ad5d18c4ad1b9faf70c558ef3b95"
+    },
+    {
+      "driveFileId": "1cQZNCH2IV4lXj8EY4pM6j4BgIQaL8cU1",
+      "filename": "IMG_5410.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Others",
+      "displayOrder": 2,
+      "caption": "Teams and the production crew gathered for the auction.",
+      "published": true,
+      "approvedChecksum": "bb38c38f0473dfda56a88e0826ad81d0"
+    },
+    {
+      "driveFileId": "1Le3b22_P_rLwp8ZvsybxI07z2_zf79d8",
+      "filename": "IMG_5316.JPG",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Others",
+      "displayOrder": 3,
+      "caption": "A conversation between guests at the event.",
+      "published": true,
+      "approvedChecksum": "75f12dc1b60e1a5a49d9e139082c7c7c"
+    },
+    {
+      "driveFileId": "16wRSFxy2-utKag18Q08h4vgPvC_KJs6e",
+      "filename": "IMG_5406.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Teams",
+      "displayOrder": 4,
+      "caption": "Reviewing notes on a tablet between bids.",
+      "published": true,
+      "approvedChecksum": "e30e935cfbd913e7405d2293d57844d2"
+    },
+    {
+      "driveFileId": "11vPNVh7teZfx5dt_yzJejUSbjbEzAYf-",
+      "filename": "IMG_5672.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Teams",
+      "displayOrder": 5,
+      "caption": "A team paddle and player markers on the auction table.",
+      "published": true,
+      "approvedChecksum": "404fb75f23317fb46512db380483ddc8"
+    },
+    {
+      "driveFileId": "1l5W47LHkt4H8nAc-7USjlWqFXe2KF2vQ",
+      "filename": "IMG_5654.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Teams",
+      "displayOrder": 6,
+      "caption": "A bidder raises a paddle in front of the auction screen.",
+      "published": true,
+      "approvedChecksum": "ac1ba1a97679b5c08cba9a07fb5fccab"
+    },
+    {
+      "driveFileId": "1HNqd88jZmKMxLySK05WWXlJwCtV3ucJH",
+      "filename": "IMG_5690.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Auctioneer",
+      "displayOrder": 7,
+      "caption": "The auctioneer beside the player information screen.",
+      "published": true,
+      "approvedChecksum": "83d17b0e600541083d6e9ada6465e539"
+    },
+    {
+      "driveFileId": "1KbqVSXB7pvehfFpILTDukC9WeHRdqwmP",
+      "filename": "IMG_5515.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Teams",
+      "displayOrder": 8,
+      "caption": "A raised team paddle during the bidding.",
+      "published": true,
+      "approvedChecksum": "978e0365940fce00b26c4f938097210b"
+    },
+    {
+      "driveFileId": "1D_NrnUy_jkx2aoOMKwRRBSUq9xqVj8PV",
+      "filename": "IMG_5493.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Teams",
+      "displayOrder": 9,
+      "caption": "A quiet reaction from the audience.",
+      "published": true,
+      "approvedChecksum": "dcb11bd613836028f0f9a58c6ea260a4"
+    },
+    {
+      "driveFileId": "1Vmr6ObiKAfstUsnMdXvYdzJ7vzydqxDQ",
+      "filename": "IMG_5563.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Teams",
+      "displayOrder": 10,
+      "caption": "A discussion around a team laptop.",
+      "published": true,
+      "approvedChecksum": "adbbc5d953a995d86587feaf6c8b439d"
+    },
+    {
+      "driveFileId": "1dtT6oBrb_wLP3pJC_hRxevJWgUtcJhec",
+      "filename": "IMG_5466.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Auctioneer",
+      "displayOrder": 11,
+      "caption": "The presenter on the Hyderabad Padel League stage.",
+      "published": true,
+      "approvedChecksum": "ef8b4da17e751e41172cca9ec98efcc7"
+    },
+    {
+      "driveFileId": "1HP0Byl0ZcPQSVRbIxRO97lhiK7THH7_0",
+      "filename": "IMG_5614.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Celebs",
+      "displayOrder": 12,
+      "caption": "A candid smile during a conversation.",
+      "published": true,
+      "approvedChecksum": "7325e7f489f4cd4c33cc4d891b0562a8"
+    },
+    {
+      "driveFileId": "1Pf8333U-4jnczqJft71-itim9E7Kqu6a",
+      "filename": "IMG_5475.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Teams",
+      "displayOrder": 13,
+      "caption": "Applause from a participant in the audience.",
+      "published": true,
+      "approvedChecksum": "4ec0c5ab921883a835071c119661d6db"
+    },
+    {
+      "driveFileId": "1HprfM-zivyuaT-73yoVkmC-gS1otsjgF",
+      "filename": "IMG_5683.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Teams",
+      "displayOrder": 14,
+      "caption": "A shared laugh between auction participants.",
+      "published": true,
+      "approvedChecksum": "4d4e8d21a2b054a711752fa34967b51e"
+    },
+    {
+      "driveFileId": "1bMUCtgJTh6A1mi7yQSEdUL9FFddJU__E",
+      "filename": "IMG_5388.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Others",
+      "displayOrder": 15,
+      "caption": "A photographer covering the event from the audience.",
+      "published": true,
+      "approvedChecksum": "0136c1b86a80c35884e0cecab01b7d1f"
+    },
+    {
+      "driveFileId": "1rn6O-fAVWJYsKRyM1Bj9BAsPUNDPx_AC",
+      "filename": "IMG_5638.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Others",
+      "displayOrder": 16,
+      "caption": "Two guests sharing a smile at the event.",
+      "published": true,
+      "approvedChecksum": "8ea45d42ed7d68fd83ca5ae34a50abfb"
+    },
+    {
+      "driveFileId": "1F2DitzPw2PfdMt0jd7wTAFPwVXt2DBZS",
+      "filename": "IMG_5645.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Others",
+      "displayOrder": 17,
+      "caption": "Guests gathered for a photograph.",
+      "published": true,
+      "approvedChecksum": "72b854ee2fefd10d0761c7693063c377"
+    },
+    {
+      "driveFileId": "1rkc9v1YtS9PkNeA3rpJFbjAv1e6f6lBl",
+      "filename": "IMG_5696.jpg",
+      "collection": "HPL_Auction",
+      "sourceSubfolder": "Venue Partner",
+      "displayOrder": 18,
+      "caption": "The league trophy beside the official venue partner display.",
+      "published": true,
+      "approvedChecksum": "dfbb163a872e282c6c42b21383faf874"
+    }
   ]
 }
