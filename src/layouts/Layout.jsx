@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { site } from '../data/site';
 import { collections } from '../services/portfolio';
 import SocialLinks from '../components/SocialLinks';
+import CustomCursor from '../components/CustomCursor';
 
 const navigationRank = new Map(site.collectionNavigationOrder.map((slug, index) => [slug, index]));
 const navigationCollections = [...collections].sort((a, b) =>
@@ -34,6 +35,7 @@ export default function Layout() {
     initial.current = false;
   }, [location.pathname]);
   return <div className="site-shell">
+    <CustomCursor />
     <a className="skip-link" href="#main">Skip to content</a>
     {announcementVisible && <div className="announcement"><span>{site.announcement}</span><button onClick={() => setAnnouncementVisible(false)} aria-label="Dismiss announcement">×</button></div>}
     <header className="site-header page-width" onKeyDown={(event) => {

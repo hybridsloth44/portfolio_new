@@ -294,9 +294,13 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
 @media (prefers-reduced-motion: reduce) { .banner-track { animation: none; } .banner-toggle { display: none; } }
 
-/* Native camera-focus cursors stay crisp over light pages and dark photographs. */
+/* A quiet ring and moving dot, inverted automatically against the photograph below. */
+.custom-cursor { display: none; position: fixed; top: 0; left: 0; width: 34px; height: 34px; margin: -17px 0 0 -17px; pointer-events: none; z-index: 2147483647; mix-blend-mode: difference; }
+.custom-cursor::before { content: ''; position: absolute; inset: 0; border: 1.5px solid rgb(255 255 255 / 58%); border-radius: 50%; transition: transform .16s ease; }
+.custom-cursor-dot { position: absolute; top: 50%; left: 50%; width: 8px; height: 8px; border-radius: 50%; background: #fff; }
+.custom-cursor[data-interactive]::before { transform: scale(1.12); }
+.custom-cursor[data-pressed]::before { transform: scale(.9); }
 @media (hover: hover) and (pointer: fine) {
-  html { cursor: url('/cursors/lens.svg') 16 16, auto; }
-  a, button:not(:disabled), .collection-dropdown summary, [role="button"] { cursor: url('/cursors/focus.svg') 16 16, pointer; }
-  input, textarea, [contenteditable="true"] { cursor: text; }
+  .custom-cursor[data-visible] { display: block; }
+  .custom-cursor-enabled, .custom-cursor-enabled * { cursor: none !important; }
 }
