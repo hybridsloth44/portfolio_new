@@ -121,8 +121,6 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
 .collection-image { overflow: hidden; }
 .collection-image .photo-surface { width: 100%; border-radius: 18px; }
 .collection-image img { aspect-ratio: inherit; }
-.collection-card .photo-surface { transition: opacity .2s; }
-.collection-card:hover .photo-surface { opacity: .8; }
 .collection-caption { padding-top: 10px; }
 .collection-caption h3 { margin-top: 6px; }
 .work-grid .collection-caption h3 { font-size: 16px; }
@@ -140,7 +138,6 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
 .gallery-grid .photo-row { width: 100%; max-width: calc(var(--row-aspect) * var(--row-height) + var(--row-gaps) * var(--photo-gap)); }
 .gallery-photo { display: block; width: 100%; min-width: 0; padding: 0; border: 0; background: transparent; text-align: left; }
 .gallery-photo img { aspect-ratio: inherit; }
-.gallery-photo:hover { opacity: .85; }
 .gallery-next { padding-block: 28px 40px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .gallery-next .text-link { font-size: 18px; text-transform: uppercase; text-align: center; }
 
@@ -296,3 +293,10 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
 @media (prefers-reduced-motion: reduce) { .banner-track { animation: none; } .banner-toggle { display: none; } }
+
+/* Native camera-focus cursors stay crisp over light pages and dark photographs. */
+@media (hover: hover) and (pointer: fine) {
+  html { cursor: url('/cursors/lens.svg') 16 16, auto; }
+  a, button:not(:disabled), .collection-dropdown summary, [role="button"] { cursor: url('/cursors/focus.svg') 16 16, pointer; }
+  input, textarea, [contenteditable="true"] { cursor: text; }
+}
