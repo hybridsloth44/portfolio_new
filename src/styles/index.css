@@ -87,8 +87,7 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
 .tilted-grid-canvas { display: block; width: 100%; height: 100%; touch-action: pan-y; opacity: 0; }
 .tilted-grid-hero.is-ready .tilted-grid-canvas { opacity: 1; }
 .curve-fallback { display: flex; align-items: center; gap: 16px; height: 100%; overflow-x: auto; padding-inline: 20px; }
-.curve-fallback-photo { position: relative; flex: none; height: 65%; overflow: hidden; border-radius: 10px; }
-.curve-fallback-photo img { display: block; width: 100%; height: 100%; }
+.curve-fallback img { flex: none; height: 65%; width: auto; border-radius: 10px; }
 .featured-story-heading { position: relative; z-index: 1; text-align: center; padding-top: 12px; }
 .featured-story-heading h3 { font-size: clamp(22px, 2.2vw, 32px); line-height: 1.2; margin-block: 8px 12px; }
 .featured-story-heading > p:last-child { font-size: 14px; line-height: 1.5; }
@@ -105,7 +104,6 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
 .photo-surface { position: relative; display: block; width: 100%; background: #e6e6e6; overflow: hidden; }
 .photo-surface img { display: block; width: 100%; height: auto; opacity: 0; transition: opacity .2s; }
 .photo-surface img.is-loaded { opacity: 1; }
-.photo-copyright { position: absolute; right: 8px; bottom: 8px; z-index: 1; color: rgb(255 255 255 / 85%); font: 400 8px/1 Arial, sans-serif; text-shadow: 0 1px 2px #000, 0 0 2px #000; white-space: nowrap; pointer-events: none; user-select: none; }
 .photo-placeholder { height: 100%; min-height: inherit; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 13px; padding: 24px; text-align: center; }
 .placeholder-label { color: #666; font: 10px/1.4 Arial, sans-serif; letter-spacing: 1px; text-transform: uppercase; }
 .placeholder-detail { color: #6b6b6b; font-size: 12px; line-height: 1.5; }
@@ -207,9 +205,8 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
 .icon-button:hover { border-color: #ddd; }
 .close-button { font: 30px Arial, sans-serif; border: 0; }
 .lightbox-stage { flex: 1; min-height: 0; display: flex; justify-content: center; padding-block: 20px; }
-.photo-fullscreen { width: 100%; height: 100%; background: transparent; container-type: size; }
+.photo-fullscreen { width: 100%; height: 100%; background: transparent; }
 .photo-fullscreen img { width: 100%; height: 100%; object-fit: contain; }
-.photo-fullscreen .photo-copyright { right: max(8px, calc((100cqw - 100cqh * var(--photo-aspect)) / 2 + 8px)); bottom: max(8px, calc((100cqh - 100cqw / var(--photo-aspect)) / 2 + 8px)); font-size: 9px; }
 .photo-fullscreen .photo-placeholder { max-width: 1100px; margin: auto; background: #222; }
 .photo-fullscreen .placeholder-label, .photo-fullscreen .placeholder-detail { color: #aaa; }
 .lightbox-bottom { display: flex; align-items: center; justify-content: space-between; min-height: 54px; font: 12px Arial, sans-serif; color: #aaa; gap: 15px; }
