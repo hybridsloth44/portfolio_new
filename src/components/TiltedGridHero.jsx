@@ -79,7 +79,20 @@ function renderer(canvas) {
       const resized = document.createElement('canvas');
       resized.width = Math.min(maximum, image.naturalWidth);
       resized.height = Math.round(resized.width * image.naturalHeight / image.naturalWidth);
-      resized.getContext('2d').drawImage(image, 0, 0, resized.width, resized.height);
+      const context = resized.getContext('2d');
+      context.drawImage(image, 0, 0, resized.width, resized.height);
+      // Add the credit once to each texture so it follows the curved photo
+      // without introducing another animated layer or changing the original.
+      const creditSize = Math.max(10, resized.height * .028);
+      const inset = creditSize;
+      context.font = `400 ${creditSize}px Arial, sans-serif`;
+      context.textAlign = 'right';
+      context.textBaseline = 'bottom';
+      context.fillStyle = 'rgba(255, 255, 255, .85)';
+      context.shadowColor = 'rgba(0, 0, 0, .9)';
+      context.shadowBlur = creditSize * .3;
+      context.shadowOffsetY = creditSize * .08;
+      context.fillText('© Shreesh', resized.width - inset, resized.height - inset);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, resized);
       return texture;
     },
@@ -218,7 +231,7 @@ export default function TiltedGridHero({ images, speed = 4, tileHeight = 44, asp
   const mask = `linear-gradient(90deg,transparent,#000 ${fade}%,#000 ${100 - fade}%,transparent)`;
   return <div className={`tilted-grid-hero ${ready ? 'is-ready' : ''} ${className}`}>
     <canvas ref={canvasRef} className="tilted-grid-canvas" aria-hidden="true" style={{ maskImage: mask, WebkitMaskImage: mask, display: fallback ? 'none' : undefined }} />
-    {fallback && <div className="curve-fallback">{images.map((image) => <img key={image.id} src={image.src} alt={image.alt} width={image.width} height={image.height} />)}</div>}
+    {fallback && <div className="curve-fallback">{images.map((image) => <div key={image.id} className="curve-fallback-photo" style={{ aspectRatio: image.width / image.height }}><img src={image.src} alt={image.alt} width={image.width} height={image.height} /><span className="photo-copyright" aria-hidden="true">© Shreesh</span></div>)}</div>}
     <span className="sr-only">Selected photographs from Shreesh’s portfolio.</span>
   </div>;
 }
