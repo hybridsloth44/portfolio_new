@@ -15,7 +15,7 @@ export const site = {
   introduction: 'I’m Shreesh. I photograph the things that catch my eye — the energy of a concert, a moment on the court, or an ordinary street in a new place.',
   biography: 'My interests span concerts, sports, travel, wildlife, street photography, and automobiles. This is a collection of what I see along the way.',
   homeSections: [
-    { title: 'Photographer' },
+    { title: 'Photography' },
   ],
   // Shreesh's selected vertical photographs, in the supplied order.
   homePhotoIds: [
