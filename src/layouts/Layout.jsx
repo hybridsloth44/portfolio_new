@@ -38,6 +38,7 @@ export default function Layout() {
   return <div className="site-shell">
     <CustomCursor />
     <a className="skip-link" href="#main">Skip to content</a>
+    <div className="site-content">
     {announcementVisible && <div className="announcement"><span>{site.announcement}</span><button onClick={() => setAnnouncementVisible(false)} aria-label="Dismiss announcement">×</button></div>}
     <header className="site-header page-width" onKeyDown={(event) => {
       if (event.key !== 'Escape') return;
@@ -60,6 +61,7 @@ export default function Layout() {
       </nav>
     </header>
     <main id="main" ref={mainRef} tabIndex={-1}><Outlet /></main>
+    </div>
     <footer className="site-footer"><div className="footer-content page-width"><div><h2>Get in touch.</h2><p>For a collaboration, a shoot, or a simple hello.</p><Link className="solid-link" to="/contact">Contact Shreesh</Link></div><div className="footer-identity"><Link className="wordmark" to="/">Shreesh.</Link><SocialLinks /><p>© {new Date().getFullYear()} Shreesh</p></div></div></footer>
   </div>;
 }

@@ -25,6 +25,7 @@ h1, h2, h3, h4, .wordmark, nav, .solid-link, .eyebrow { font-family: var(--font-
 main:focus { outline: none; }
 .page-width { width: 92%; max-width: 1600px; margin-inline: auto; }
 .site-shell { min-height: 100vh; display: flex; flex-direction: column; }
+.site-content { min-height: 100dvh; display: flex; flex-direction: column; }
 main { flex: 1; }
 .announcement { display: flex; align-items: center; justify-content: center; min-height: 34px; padding: 8px 40px; background: #000; color: #fff; position: relative; font-family: var(--font-sans); font-size: 11px; text-transform: uppercase; line-height: 1.3; text-align: center; }
 .announcement > button { position: absolute; right: 12px; top: 0; height: 100%; width: 24px; font-family: Arial, sans-serif; font-size: 17px; background: transparent; border: 0; }
@@ -169,6 +170,12 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
 .inquiry-details { max-width: 500px; font-size: 16px; line-height: 1.7; }
 .inquiry-cta { gap: 14px; min-height: 44px; margin-top: 28px; }
 .inquiry-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
+.site-content > main:has(.work-with-me-page) { display: flex; flex-direction: column; }
+.work-with-me-page { flex: 1; max-width: 1160px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: center; gap: clamp(32px, 5vw, 80px); padding-block: clamp(24px, 3vw, 40px); }
+.work-with-me-page .quote-request { margin-top: 28px; }
+.work-with-me-photo { width: min(100%, 420px, calc((100svh - 202px) * .75)); justify-self: end; }
+.work-with-me-photo .photo-surface { border-radius: 18px; }
+.work-with-me-photo .catalog-state { min-height: 0; aspect-ratio: 3 / 4; padding: 24px; justify-content: center; }
 .contact-options { display: grid; margin-top: 36px; }
 .contact-option { display: flex; align-items: center; gap: 14px; min-height: 72px; padding-block: 20px; border-bottom: 1px solid #ccc; transition: opacity .2s; }
 .contact-option:hover { opacity: .65; }
@@ -277,6 +284,8 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
   .inquiry-description { margin-top: 20px; font-size: 16px; }
   .quote-request { margin-top: 32px; }
   .inquiry-cta { margin-top: 24px; }
+  .work-with-me-page { max-width: 520px; grid-template-columns: 1fr; align-items: start; align-content: start; gap: 28px; }
+  .work-with-me-photo { width: min(100%, 320px); justify-self: center; }
   .contact-options { margin-top: 28px; }
   .contact-option { gap: 10px; }
   .site-footer { padding-block: 24px; }
