@@ -2,7 +2,7 @@
 export const site = {
   name: 'Shreesh',
   announcement: 'Photography by Shreesh — concerts, sports, travel & everyday life',
-  homeIntroduction: 'I’m a photographer exploring concerts, sports, travel, wildlife, street photography, and automobiles — one moment at a time.',
+  homeIntroduction: 'I’m a photographer drawn to sports, music, motion, and the everyday — at heart, a storyteller capturing life one frame at a time.',
   email: 'skambampally@gmail.com',
   emailSubject: 'Photography Booking Inquiry',
   workWithMePhotoId: '1pyP9ojGQaJMW8ztJ_jrofn5YOMr-k2pU',
