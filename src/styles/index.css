@@ -116,16 +116,16 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
 .page-heading-note { margin-top: 12px; }
 .page-heading-note p { font-size: var(--type-body); line-height: 1.6; }
 .page-heading-note .eyebrow { display: block; margin-top: 8px; }
-.collection-grid { display: grid; gap: 24px; max-width: 1120px; margin-inline: auto; align-items: start; }
-.collection-grid .photo-row { width: 100%; max-width: calc(var(--row-aspect) * var(--row-height) + var(--row-gaps) * var(--photo-gap)); }
+.collection-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 24px 12px; max-width: 1120px; margin-inline: auto; align-items: stretch; }
 .photo-row { display: grid; grid-template-columns: var(--photo-columns); gap: var(--photo-gap); align-items: start; }
 .work-grid { padding-bottom: 48px; }
-.collection-card { display: block; min-width: 0; }
-.collection-image { overflow: hidden; }
-.collection-image .photo-surface { width: 100%; border-radius: 18px; }
-.collection-image img { aspect-ratio: inherit; }
+.collection-card { display: grid; grid-template-rows: auto 1fr; min-width: 0; }
+.collection-image { aspect-ratio: 3 / 4; overflow: hidden; border-radius: 18px; }
+.collection-image .photo-surface { width: 100%; height: 100%; }
+.collection-image img { height: 100%; object-fit: cover; }
 .collection-caption { padding-top: 10px; }
-.collection-caption h3 { margin-top: 6px; }
+.collection-caption > div { min-width: 0; }
+.collection-caption h3 { margin-top: 6px; min-height: 2.4em; }
 .work-grid .collection-caption h3 { font-size: 16px; }
 .collection-meta { font: 11px/1.5 var(--font-serif); color: #666; }
 .caption-separator { margin-inline: 6px; }
@@ -215,7 +215,7 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
 @media (min-width: 768px) and (max-width: 1150px) {
   :root { --type-collection: 18px; }
   .introduction-grid { width: 84%; gap: 6vw; }
-  .collection-grid { max-width: 840px; }
+  .collection-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 840px; }
 }
 @media (max-width: 767px) {
   :root { --type-collection: 18px; --type-section: 20px; --type-page: 28px; --page-gutter: clamp(16px, 5vw, 24px); }
@@ -259,7 +259,7 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
   .placeholder-detail { font-size: 11px; }
   .page-heading { padding-block: 16px 20px; }
   .page-heading-note { margin-top: 10px; }
-  .collection-grid { max-width: 520px; gap: 18px; }
+  .collection-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 520px; gap: 18px 10px; }
   .work-grid .collection-caption { gap: 6px; }
   .work-grid .collection-caption h3 { font-size: 14px; }
   .work-grid .collection-meta { font-size: 10px; }
