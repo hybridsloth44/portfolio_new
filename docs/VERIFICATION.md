@@ -1,6 +1,13 @@
 # Portfolio verification
 
+## Work With Me and direct contact - 12 October 2026
+
+Added `/work-with-me` to the existing router and navigation, with the supplied copy and a Request a Quote CTA leading to Contact. No pricing is displayed. Reused the portfolio fonts, palette, button treatment, focus indicators, and reduced-motion behavior. Contact now has two direct links with subtle shared icons; the form and external delivery configuration have been removed. All contact destinations and the inquiry subject come from `src/data/site.js`.
+
+Production build and all eight policy tests passed. Browser checks at nine widths from 320px to 1920px covered both pages, direct route loads, navigation order and active state, mobile menu opening/closing, keyboard focus, CTA navigation, and exact Instagram/mailto destinations. No overflow, JavaScript errors, or delivery-service requests occurred. Mobile and desktop screenshots were inspected. Existing homepage checks passed at ten sizes; equal Work cards passed at eleven widths. All nine galleries retain their photo counts and original image proportions; lightbox keyboard navigation and closing passed. No inquiry was sent.
+
 ## Larger About page - 11 October 2026
+
 
 Expanded the About composition from an 800px maximum to 1160px, enlarged the uncropped portrait from 300px to 480px, and increased the name heading to 30–42px and body text to 16–18px. Desktop portrait and copy are vertically centered. Mobile stacks the content with a centered portrait up to 320px wide. Other page typography is unchanged.
 
@@ -9,12 +16,6 @@ The production build passed. Production-preview browser checks passed at 320, 37
 ## Balanced landing-page margins - 11 October 2026
 
 Balanced the hero grid into equal columns, with the text anchored to its left edge and the portrait to its right edge. This gives equal outer margins while preserving the portrait's previous size. The headline, social icons, and View Work link share one center line. Verified equal outer margins to within one pixel at 768, 1024, 1240, 1440, and 1920px; mobile layouts at 320/375px, below-screen marquee positioning, portrait proportions, and homepage card alignment also passed. Inspected the desktop screenshot. Production build passed.
-
-## Instagram and contact form - 11 October 2026
-
-Added the supplied Instagram profile and Gmail address. Social icons now use black circular backgrounds with white line icons; Instagram appears first in the homepage/footer icons. Contact now follows the reference form with first/last name, email, optional phone, message, and Send. The submission service uses EmailJS's documented REST endpoint and public Vite configuration, with a 20-second timeout, duplicate-submit protection, required-field checks, success feedback, and preserved drafts after failure. Recipient configuration stays fixed in the EmailJS template.
-
-Verified layouts at 320, 375, 768, 1150, and 1920px; desktop name columns, mobile stacking, supplied links, circular icons, and no horizontal overflow. Isolated browser mocks verified request contents, sending lock, success reset, failure feedback, retry availability, and the unconfigured state. Screenshots of desktop/mobile contact and footer icons were inspected. Production build passed. No live email was sent: Gmail authorization and the EmailJS Service ID, Template ID, and Public Key are still required. Setup is documented in CONTACT.md.
 
 ## Rolling heading below the landing screen - 11 October 2026
 

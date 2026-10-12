@@ -56,7 +56,7 @@ export default function Layout() {
           <summary role="button" className={location.pathname === '/work' ? 'is-current' : undefined} aria-current={location.pathname === '/work' ? 'page' : undefined} aria-expanded={workOpen} aria-controls="work-collections"><span>Work</span><span className="dropdown-indicator" aria-hidden="true">▾</span></summary>
           <div id="work-collections">{navigationCollections.map((collection) => <NavLink key={collection.slug} to={`/work/${collection.slug}`} end onClick={() => { dropdownRef.current.open = false; setMenuOpen(false); }}>{collection.galleryTitle || collection.title}</NavLink>)}</div>
         </details>
-        <NavLink to="/about">About</NavLink><NavLink to="/contact">Contact</NavLink>
+        <NavLink to="/work-with-me">Work With Me</NavLink><NavLink to="/about">About</NavLink><NavLink to="/contact">Contact</NavLink>
       </nav>
     </header>
     <main id="main" ref={mainRef} tabIndex={-1}><Outlet /></main>

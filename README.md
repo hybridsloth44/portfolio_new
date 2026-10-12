@@ -51,9 +51,9 @@ On this computer without Node on PATH, substitute `powershell -NoProfile -Execut
 | `config/sync.json` | Server-side folder mapping and publishing policy; sync starts disabled |
 | `src/styles/index.css` | Typography, spacing, breakpoints, and light palette |
 
-### Contact form
+### Booking and direct contact
 
-Instagram links to `https://www.instagram.com/shreeshhhhhhh/?hl=en`; direct email links use `skambampally@gmail.com`. Contact has a responsive message form matching the supplied reference. EmailJS submission code is implemented, but delivery remains inactive until the connected Gmail Service ID, Template ID, and Public Key are configured. See [docs/CONTACT.md](docs/CONTACT.md) for account setup, template settings, and the three public environment variables. No Gmail password or private key is used in the browser.
+`/work-with-me` invites visitors to request a quote through `/contact`; no pricing is displayed. Contact offers Instagram DMs and direct email inquiries with the subject "Photography Booking Inquiry". Edit the email address, Instagram profile, and email subject in `src/data/site.js`; shared links throughout the site use this configuration. No form, delivery service, or browser environment settings are required. See [docs/CONTACT.md](docs/CONTACT.md).
 
 `HPL_Auction` is preserved as the folder/collection name; its dedicated gallery is titled **HPL Auction**. The final 18-image sequence was selected after visually reviewing 221 originals across Auctioneer, Teams, Celebs, Others, and Venue Partner. It retains the five initial shortlisted files and adds bidding, reactions, event context, and a closing trophy photograph. A real portrait cover replaces the placeholder. Each approved revision is bound to the MD5 of the downloaded, reviewed original. There are no auction subpages or filters. The excluded folder has no frontend collection or route and is rejected during recursive synchronization.
 
@@ -98,13 +98,13 @@ Read [docs/SYNC.md](docs/SYNC.md) for the prepared read-only sync runner, review
 
 ## Features
 
-- Home, Work, nine collection galleries, About, Contact, and 404.
+- Home, Work, nine collection galleries, Work With Me, About, Contact, and 404.
 - Smaller typography and tighter spacing throughout: 14px body copy and collection-page titles capped at 44px. The homepage opening follows the supplied reference with a broad split composition, responsive 24–41px desktop headline, portrait up to 500px wide, and a hero filling the first screen. The large rolling Photography strip begins below the landing viewport, with faded edges. The featured photo strip draws the entire curved scene in one GPU canvas frame, using a continuous mesh per photograph, cached textures, and bounded perspective to avoid independently animated facets flickering. Each photograph preserves its original ratio. Mobile uses a gentler curve with swipe support, consistent side margins, a compact portrait introduction, and an opaque menu with 44px collection targets. Motion stops offscreen and respects reduced-motion preferences; no pause buttons are shown. A native horizontal photo strip remains available if GPU rendering is unavailable.
 - Work uses compact portrait covers with matching heights within each row and original proportions, separated by 12px gaps (10px on narrow screens). Galleries choose row breaks for the available width, aligning both edges with even 8px gaps (6px on narrow screens). Gallery photographs stay below 300px high, with no cropping or padded frames. A short final row stays compact and aligns left. Galleries retain both portrait and landscape photographs; clicking opens the full-size viewer.
 - Native modal fullscreen viewer with focus containment, focus restoration, scroll lock, previous/next, arrow keys, Escape, and wrapping navigation.
 - Lazy-loaded responsive images, eager hero, image loading/error fallbacks, catalog retry, route-specific titles and descriptions.
 - Accessible navigation, skip link, focus indicators, reduced-motion support.
-- Circular Instagram/contact icons with supplied destinations, and a responsive contact form with required fields, sending feedback, and draft preservation on failure. EmailJS account configuration is pending.
+- Circular Instagram/contact icons with shared destinations, direct contact options, and a Work With Me page with a Request a Quote CTA.
 
 ## Structure
 
