@@ -173,11 +173,14 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
 .site-content > main:has(.work-with-me-page) { display: flex; flex-direction: column; }
 .work-with-me-page { flex: 1; max-width: 1440px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: clamp(32px, 4vw, 64px); padding-block: 24px; }
 .work-with-me-page .inquiry-content { max-width: none; }
+.work-with-me-page .eyebrow { font-size: clamp(16px, 1.3vw, 20px); }
 .work-with-me-page h1 { font-size: clamp(28px, 3.8vw, 60px); line-height: 1.1; }
 .work-with-me-page .eyebrow + h1 { margin-top: 12px; }
-.work-with-me-page .inquiry-description { max-width: 640px; margin-top: 20px; font-size: clamp(18px, 1.4vw, 22px); line-height: 1.6; }
+.work-with-me-page .inquiry-description,
+.work-with-me-page .inquiry-details { font-size: clamp(18px, 1.4vw, 22px); line-height: 1.6; }
+.work-with-me-page .inquiry-description { max-width: 640px; margin-top: 20px; }
 .work-with-me-page .quote-request { margin-top: 24px; }
-.work-with-me-page .inquiry-details { max-width: 600px; font-size: clamp(16px, 1.2vw, 20px); line-height: 1.65; }
+.work-with-me-page .inquiry-details { max-width: 600px; }
 .work-with-me-page .inquiry-cta { margin-top: 24px; min-height: 48px; }
 .work-with-me-photo { width: min(100%, 680px, calc((100svh - 170px) * .75)); justify-self: end; }
 .work-with-me-photo .photo-surface { border-radius: 18px; }
@@ -296,7 +299,8 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
   .inquiry-cta { margin-top: 24px; }
   .work-with-me-page { max-width: 520px; grid-template-columns: 1fr; align-content: start; gap: 24px; }
   .work-with-me-page h1 { font-size: var(--type-page); }
-  .work-with-me-page .inquiry-description { font-size: 16px; }
+  .work-with-me-page .inquiry-description,
+  .work-with-me-page .inquiry-details { font-size: 16px; }
   .work-with-me-photo { width: min(100%, 360px); justify-self: center; }
   .contact-options { margin-top: 28px; }
   .contact-option { gap: 10px; }
