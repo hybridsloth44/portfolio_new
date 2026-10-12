@@ -168,12 +168,13 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
 .quote-request { margin-top: 40px; }
 .inquiry-details { max-width: 500px; font-size: 16px; line-height: 1.7; }
 .inquiry-cta { gap: 14px; min-height: 44px; margin-top: 28px; }
+.inquiry-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
 .contact-options { display: grid; margin-top: 36px; }
 .contact-option { display: flex; align-items: center; gap: 14px; min-height: 72px; padding-block: 20px; border-bottom: 1px solid #ccc; transition: opacity .2s; }
 .contact-option:hover { opacity: .65; }
-.contact-option > svg { width: 22px; height: 22px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.contact-option > svg:not(.contact-option-arrow) { width: 22px; height: 22px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.5; }
 .contact-option-label { min-width: 0; font-size: 16px; line-height: 1.6; }
-.contact-option-arrow { margin-left: auto; font-size: 20px; }
+.contact-option-arrow { margin-left: auto; flex-shrink: 0; }
 .site-shell:has(.contact-page, .work-with-me-page) .footer-content > div:first-child { display: none; }
 .site-shell:has(.contact-page, .work-with-me-page) .footer-content { justify-content: flex-end; }
 .site-footer { background: var(--color-page); padding-block: 32px; }
