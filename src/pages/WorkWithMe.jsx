@@ -23,7 +23,7 @@ export default function WorkWithMe() {
       </div>
     </div>
     <div className="work-with-me-photo">
-      {photo ? <Photo photo={photo} priority sizes="(max-width: 767px) min(90vw, 360px), (max-width: 900px) 420px, (max-width: 1500px) 44vw, 680px" /> : <CatalogState {...{ loading, error, retry }} />}
+      {photo ? <Photo photo={photo} priority sizes="(max-width: 767px) min(90vw, 360px), (max-width: 900px) 420px, (max-width: 1260px) 40vw, 480px" /> : <CatalogState {...{ loading, error, retry }} />}
     </div>
   </div>;
 }

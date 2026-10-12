@@ -11,6 +11,8 @@
   --type-collection: 20px;
   --type-section: 24px;
   --type-page: clamp(28px, 3.1vw, 44px);
+  --header-height: 88px;
+  --announcement-height: 0px;
   color: #000; background: var(--color-page); font-family: var(--font-serif); font-size: var(--type-body); font-synthesis: none; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
 }
 * { box-sizing: border-box; }
@@ -25,11 +27,12 @@ h1, h2, h3, h4, .wordmark, nav, .solid-link, .eyebrow { font-family: var(--font-
 main:focus { outline: none; }
 .page-width { width: 92%; max-width: 1600px; margin-inline: auto; }
 .site-shell { min-height: 100vh; display: flex; flex-direction: column; }
+.site-shell:has(.announcement) { --announcement-height: 34px; }
 .site-content { min-height: 100dvh; display: flex; flex-direction: column; }
 main { flex: 1; }
 .announcement { display: flex; align-items: center; justify-content: center; min-height: 34px; padding: 8px 40px; background: #000; color: #fff; position: relative; font-family: var(--font-sans); font-size: 11px; text-transform: uppercase; line-height: 1.3; text-align: center; }
 .announcement > button { position: absolute; right: 12px; top: 0; height: 100%; width: 24px; font-family: Arial, sans-serif; font-size: 17px; background: transparent; border: 0; }
-.site-header { height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 28px; position: relative; z-index: 20; }
+.site-header { height: var(--header-height); flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; gap: 28px; position: relative; z-index: 20; }
 .wordmark { font-size: 24px; line-height: 1.2; letter-spacing: -.48px; white-space: nowrap; }
 nav { display: flex; align-items: center; gap: 28px; font-size: 13px; line-height: 1.3; }
 nav > a { padding-block: 12px; }
@@ -52,13 +55,7 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
 .solid-link { display: inline-flex; justify-content: center; align-items: center; min-height: 38px; padding: 10px 24px; background: #000; color: #fff; border-radius: 8px; font-size: 12px; line-height: 1.3; transition: opacity .2s; }
 .solid-link:hover { opacity: .75; }
 
-/* Give the opening composition the same prominence as the supplied reference. */
-.site-shell:has(.home-introduction) { --home-header-height: clamp(104px, 8.3vw, 160px); --home-announcement-height: 0px; }
-.site-shell:has(.home-introduction):has(.announcement) { --home-announcement-height: 34px; }
-.site-shell:has(.home-introduction) .site-header { height: var(--home-header-height); max-width: none; }
-.site-shell:has(.home-introduction) .wordmark { font-size: clamp(24px, 1.95vw, 36px); }
-.site-shell:has(.home-introduction) nav { font-size: clamp(13px, 1.05vw, 20px); }
-.home-introduction { background: var(--color-page); min-height: calc(100svh - var(--home-announcement-height) - var(--home-header-height)); padding-block: clamp(24px, 2.5vw, 48px) calc(clamp(32px, 3vw, 58px) + 10svh); display: grid; align-items: center; }
+.home-introduction { background: var(--color-page); min-height: calc(100svh - var(--announcement-height) - var(--header-height)); padding-block: clamp(24px, 2.5vw, 48px) calc(clamp(32px, 3vw, 58px) + 10svh); display: grid; align-items: center; }
 .introduction-grid { width: min(1360px, 76%); margin-inline: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(64px, 10vw, 190px); align-items: center; }
 .introduction-copy { text-align: center; width: 100%; max-width: 580px; justify-self: start; }
 .introduction-copy h1 { font-size: clamp(24px, 2.15vw, 41px); line-height: 1.2; letter-spacing: -.02em; margin: 0; text-wrap: balance; }
@@ -171,18 +168,17 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
 .inquiry-cta { gap: 14px; min-height: 44px; margin-top: 28px; }
 .inquiry-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
 .site-content > main:has(.work-with-me-page) { display: flex; flex-direction: column; }
-.work-with-me-page { flex: 1; max-width: 1440px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: clamp(32px, 4vw, 64px); padding-block: 24px; }
+.work-with-me-page { max-width: 1160px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .95fr); align-items: start; gap: clamp(32px, 4vw, 64px); padding-block: 24px; }
 .work-with-me-page .inquiry-content { max-width: none; }
-.work-with-me-page .eyebrow { font-size: clamp(16px, 1.3vw, 20px); }
-.work-with-me-page h1 { font-size: clamp(28px, 3.8vw, 60px); line-height: 1.1; }
+.work-with-me-page .eyebrow { font-size: 13px; }
 .work-with-me-page .eyebrow + h1 { margin-top: 12px; }
 .work-with-me-page .inquiry-description,
-.work-with-me-page .inquiry-details { font-size: clamp(18px, 1.4vw, 22px); line-height: 1.6; }
+.work-with-me-page .inquiry-details { font-size: clamp(16px, 1.3vw, 18px); line-height: 1.65; }
 .work-with-me-page .inquiry-description { max-width: 640px; margin-top: 20px; }
 .work-with-me-page .quote-request { margin-top: 24px; }
 .work-with-me-page .inquiry-details { max-width: 600px; }
 .work-with-me-page .inquiry-cta { margin-top: 24px; min-height: 48px; }
-.work-with-me-photo { width: min(100%, 680px, calc((100svh - 170px) * .75)); justify-self: end; }
+.work-with-me-photo { width: min(100%, 480px); justify-self: start; }
 .work-with-me-photo .photo-surface { border-radius: 18px; }
 .work-with-me-photo .catalog-state { min-height: 0; aspect-ratio: 3 / 4; padding: 24px; justify-content: center; }
 .contact-options { display: grid; margin-top: 36px; }
@@ -233,14 +229,12 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
   .work-with-me-photo { width: min(100%, 420px); justify-self: center; }
 }
 @media (max-width: 767px) {
-  :root { --type-collection: 18px; --type-section: 20px; --type-page: 28px; --page-gutter: clamp(16px, 5vw, 24px); }
+  :root { --type-collection: 18px; --type-section: 20px; --type-page: 28px; --page-gutter: clamp(16px, 5vw, 24px); --header-height: 68px; }
   .page-width { width: calc(100% - 2 * var(--page-gutter)); }
   .announcement { min-height: 44px; font-size: 10px; padding: 8px 36px; }
-  .site-header { height: 68px; gap: 20px; }
+  .site-header { gap: 20px; }
   .wordmark { font-size: 20px; letter-spacing: -.32px; }
-  .site-shell:has(.home-introduction) { --home-header-height: 68px; }
-  .site-shell:has(.home-introduction):has(.announcement) { --home-announcement-height: 44px; }
-  .site-shell:has(.home-introduction) .wordmark { font-size: 20px; }
+  .site-shell:has(.announcement) { --announcement-height: 44px; }
   .menu-toggle { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 0; width: 44px; height: 44px; background: transparent; border: 0; }
   .menu-toggle span { height: 2px; background: #000; width: 26px; transition: transform .2s; }
   .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(5px) rotate(45deg); }
@@ -253,7 +247,7 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
   .collection-dropdown > div { position: static; width: 100%; max-width: none; padding: 0 0 12px 12px; justify-items: stretch; text-align: left; font-size: 13px; gap: 0; background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
   .collection-dropdown > div a { display: flex; align-items: center; min-height: 44px; padding-block: 10px; }
   .collection-dropdown > div::before { content: none; }
-  .home-introduction { min-height: calc(100svh - var(--home-announcement-height) - var(--home-header-height)); padding-block: 20px 28px; align-items: center; }
+  .home-introduction { padding-block: 20px 28px; align-items: center; }
   .introduction-grid { width: calc(100% - 2 * var(--page-gutter)); display: flex; flex-direction: column-reverse; align-items: center; gap: 24px; }
   .introduction-portrait { width: min(86vw, calc(62svh - 180px), 380px); max-width: 100%; }
   .introduction-portrait .photo-surface { border-radius: 16px; }
@@ -298,7 +292,6 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
   .quote-request { margin-top: 32px; }
   .inquiry-cta { margin-top: 24px; }
   .work-with-me-page { max-width: 520px; grid-template-columns: 1fr; align-content: start; gap: 24px; }
-  .work-with-me-page h1 { font-size: var(--type-page); }
   .work-with-me-page .inquiry-description,
   .work-with-me-page .inquiry-details { font-size: 16px; }
   .work-with-me-photo { width: min(100%, 360px); justify-self: center; }
