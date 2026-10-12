@@ -54,7 +54,7 @@ export default function Layout() {
           onPointerLeave={(event) => { if (event.pointerType === 'mouse' && !event.currentTarget.contains(document.activeElement)) event.currentTarget.open = false; }}
           onToggle={(event) => setWorkOpen(event.currentTarget.open)}
           onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget) && !event.currentTarget.matches(':hover')) event.currentTarget.open = false; }}>
-          <summary role="button" className={location.pathname === '/work' ? 'is-current' : undefined} aria-current={location.pathname === '/work' ? 'page' : undefined} aria-expanded={workOpen} aria-controls="work-collections"><span>Work</span><span className="dropdown-indicator" aria-hidden="true">▾</span></summary>
+          <summary role="button" className={location.pathname === '/work' ? 'is-current' : undefined} aria-current={location.pathname === '/work' ? 'page' : undefined} aria-expanded={workOpen} aria-controls="work-collections"><span>Photography</span><span className="dropdown-indicator" aria-hidden="true">▾</span></summary>
           <div id="work-collections">{navigationCollections.map((collection) => <NavLink key={collection.slug} to={`/work/${collection.slug}`} end onClick={() => { dropdownRef.current.open = false; setMenuOpen(false); }}>{collection.galleryTitle || collection.title}</NavLink>)}</div>
         </details>
         <NavLink to="/work-with-me">Work With Me</NavLink><NavLink to="/about">About</NavLink><NavLink to="/contact">Contact</NavLink>
