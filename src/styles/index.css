@@ -171,9 +171,15 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
 .inquiry-cta { gap: 14px; min-height: 44px; margin-top: 28px; }
 .inquiry-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
 .site-content > main:has(.work-with-me-page) { display: flex; flex-direction: column; }
-.work-with-me-page { flex: 1; max-width: 1160px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: center; gap: clamp(32px, 5vw, 80px); padding-block: clamp(24px, 3vw, 40px); }
-.work-with-me-page .quote-request { margin-top: 28px; }
-.work-with-me-photo { width: min(100%, 420px, calc((100svh - 202px) * .75)); justify-self: end; }
+.work-with-me-page { flex: 1; max-width: 1440px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: clamp(32px, 4vw, 64px); padding-block: 24px; }
+.work-with-me-page .inquiry-content { max-width: none; }
+.work-with-me-page h1 { font-size: clamp(28px, 3.8vw, 60px); line-height: 1.1; }
+.work-with-me-page .eyebrow + h1 { margin-top: 12px; }
+.work-with-me-page .inquiry-description { max-width: 640px; margin-top: 20px; font-size: clamp(18px, 1.4vw, 22px); line-height: 1.6; }
+.work-with-me-page .quote-request { margin-top: 24px; }
+.work-with-me-page .inquiry-details { max-width: 600px; font-size: clamp(16px, 1.2vw, 20px); line-height: 1.65; }
+.work-with-me-page .inquiry-cta { margin-top: 24px; min-height: 48px; }
+.work-with-me-photo { width: min(100%, 680px, calc((100svh - 170px) * .75)); justify-self: end; }
 .work-with-me-photo .photo-surface { border-radius: 18px; }
 .work-with-me-photo .catalog-state { min-height: 0; aspect-ratio: 3 / 4; padding: 24px; justify-content: center; }
 .contact-options { display: grid; margin-top: 36px; }
@@ -218,6 +224,10 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
   :root { --type-collection: 18px; }
   .introduction-grid { width: 84%; gap: 6vw; }
   .collection-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 840px; }
+}
+@media (min-width: 768px) and (max-width: 900px) {
+  .work-with-me-page { max-width: 620px; grid-template-columns: 1fr; gap: 24px; }
+  .work-with-me-photo { width: min(100%, 420px); justify-self: center; }
 }
 @media (max-width: 767px) {
   :root { --type-collection: 18px; --type-section: 20px; --type-page: 28px; --page-gutter: clamp(16px, 5vw, 24px); }
@@ -284,8 +294,10 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
   .inquiry-description { margin-top: 20px; font-size: 16px; }
   .quote-request { margin-top: 32px; }
   .inquiry-cta { margin-top: 24px; }
-  .work-with-me-page { max-width: 520px; grid-template-columns: 1fr; align-items: start; align-content: start; gap: 28px; }
-  .work-with-me-photo { width: min(100%, 320px); justify-self: center; }
+  .work-with-me-page { max-width: 520px; grid-template-columns: 1fr; align-content: start; gap: 24px; }
+  .work-with-me-page h1 { font-size: var(--type-page); }
+  .work-with-me-page .inquiry-description { font-size: 16px; }
+  .work-with-me-photo { width: min(100%, 360px); justify-self: center; }
   .contact-options { margin-top: 28px; }
   .contact-option { gap: 10px; }
   .site-footer { padding-block: 24px; }
