@@ -14,8 +14,11 @@ export const site = {
     height: 1402,
     alt: 'Shreesh holding a camera beside his face, wearing sunglasses',
   },
-  introduction: 'I’m Shreesh. I photograph the things that catch my eye — the energy of a concert, a moment on the court, or an ordinary street in a new place.',
-  biography: 'My interests span concerts, sports, travel, wildlife, street photography, and automobiles. This is a collection of what I see along the way.',
+  introduction: 'I’m Shreesh. I’m drawn to the energy of live music, the intensity of sport, the character of the streets, and the beauty of machines in motion.',
+  biography: [
+    'From the chaos of a concert to the split-second moments on the court, I look for frames that capture more than what’s in front of the lens — the atmosphere, the emotion, and the details that make each moment unique.',
+    'This is a collection of what catches my eye, wherever the camera takes me.',
+  ],
   homeSections: [
     { title: 'Photography' },
   ],
