@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { portraitCoverPhoto } from '../services/portfolio';
+import { coverPhoto } from '../services/portfolio';
 import Photo from './Photo';
 import Arrow from './Arrow';
 
 export default function CollectionCard({ collection, catalog, index }) {
-  const photo = portraitCoverPhoto(collection, catalog);
+  const photo = coverPhoto(collection, catalog);
   return <Link to={`/work/${collection.slug}`} className="collection-card group" aria-label={`View ${collection.title}`}>
     <div className="collection-image"><Photo key={photo?.id || collection.slug} photo={photo || { width: 3, height: 4 }} placeholderTitle={collection.galleryTitle || collection.title} sizes="(max-width: 767px) 44vw, (max-width: 1150px) 30vw, 280px" /></div>
     <div className="collection-caption flex items-start justify-between gap-4">
