@@ -1,9 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Photo({ photo, priority = false, className = '', fullscreen = false, sizes = '(max-width: 767px) 100vw, 50vw', placeholderTitle }) {
-  const [failed, setFailed] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const imageRef = useRef(null);
+  const [failedSource, setFailedSource] = useState(null);
+  const [loadedSource, setLoadedSource] = useState(null);
+  const source = photo?.src;
+  const failed = Boolean(source && failedSource === source);
+  const loaded = Boolean(source && loadedSource === source);
   const placeholder = !photo?.src || photo.placeholder;
+
+  useEffect(() => {
+    const image = imageRef.current;
+    if (image?.complete && image.naturalWidth > 0) setLoadedSource(source);
+  }, [source]);
+
   return (
     <div className={`photo-surface ${fullscreen ? 'photo-fullscreen' : ''} ${className}`} style={!fullscreen ? { aspectRatio: `${photo?.width || 3} / ${photo?.height || 2}` } : undefined}>
       {placeholder || failed ? (
@@ -14,7 +24,7 @@ export default function Photo({ photo, priority = false, className = '', fullscr
         </div>
       ) : <>
         {!loaded && <span className="image-loading" role="status">Loading photograph</span>}
-        <img src={photo.src} srcSet={photo.srcSet} sizes={fullscreen ? '100vw' : sizes} width={photo.width} height={photo.height} alt={photo.alt || photo.caption || 'Photograph by Shreesh'} loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : 'auto'} decoding="async" onLoad={() => setLoaded(true)} onError={() => setFailed(true)} className={loaded ? 'is-loaded' : ''} />
+        <img ref={imageRef} src={photo.src} srcSet={photo.srcSet} sizes={fullscreen ? '100vw' : sizes} width={photo.width} height={photo.height} alt={photo.alt || photo.caption || 'Photograph by Shreesh'} loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : 'auto'} decoding="async" onLoad={() => setLoadedSource(source)} onError={() => setFailedSource(source)} className={loaded ? 'is-loaded' : ''} />
       </>}
     </div>
   );
