@@ -8,11 +8,11 @@ export const site = {
   workWithMePhotoId: '1pyP9ojGQaJMW8ztJ_jrofn5YOMr-k2pU',
   instagram: 'https://www.instagram.com/shreeshhhhhhh/?hl=en',
   portrait: {
-    src: '/images/photographer/shreesh-800.webp',
-    srcSet: '/images/photographer/shreesh-400.webp 400w, /images/photographer/shreesh-800.webp 800w, /images/photographer/shreesh-1122.webp 1122w',
-    width: 1122,
-    height: 1402,
-    alt: 'Shreesh holding a camera beside his face, wearing sunglasses',
+    src: '/images/photographer/shreesh-red-800.webp',
+    srcSet: '/images/photographer/shreesh-red-400.webp 400w, /images/photographer/shreesh-red-800.webp 800w, /images/photographer/shreesh-red-1086.webp 1086w',
+    width: 1086,
+    height: 1448,
+    alt: 'Portrait of Shreesh wearing glasses against a red background',
   },
   introduction: 'I’m Shreesh. I’m drawn to the energy of live music, the intensity of sport, the character of the streets, and the beauty of machines in motion.',
   biography: [
