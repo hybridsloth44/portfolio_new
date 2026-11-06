@@ -35,6 +35,20 @@ export default function Layout() {
     if (!initial.current) mainRef.current?.focus({ preventScroll: true });
     initial.current = false;
   }, [location.pathname]);
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    let previousY = window.scrollY;
+    const closeOnDownwardScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY > previousY) {
+        navRef.current?.querySelectorAll('details[open]').forEach((details) => { details.open = false; });
+        setMenuOpen(false);
+      }
+      previousY = currentY;
+    };
+    window.addEventListener('scroll', closeOnDownwardScroll, { passive: true });
+    return () => window.removeEventListener('scroll', closeOnDownwardScroll);
+  }, [menuOpen]);
   return <div className="site-shell">
     <CustomCursor />
     <a className="skip-link" href="#main">Skip to content</a>
