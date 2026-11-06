@@ -9,8 +9,8 @@
   --color-page: #F3F0E9;
   --color-text: #171717;
   --color-secondary: #282624;
-  --color-accent: #8C3035;
-  --color-accent-hover: #641F27;
+  --color-accent: #171717;
+  --color-accent-hover: #282624;
   --color-border: #DED9D0;
   --color-muted: #756E66;
   --type-body: 14px;
@@ -254,14 +254,14 @@ nav a.active, .collection-dropdown summary.is-current > span:first-child { text-
   nav::before { content: none; }
   nav.is-open { display: flex; max-height: calc(100dvh - 112px); overflow-y: auto; overscroll-behavior: contain; }
   nav > a, .collection-dropdown summary { min-height: 54px; padding: 0 14px; border-radius: 10px; font-size: 15px; letter-spacing: .015em; text-align: left; transition: background-color .18s ease, color .18s ease; }
-  nav > a.active { color: var(--color-accent); background: rgb(140 48 53 / 7%); text-decoration: none; }
+  nav > a.active { color: var(--color-accent); background: rgb(23 23 23 / 5%); text-decoration: none; }
   .collection-dropdown summary { justify-content: space-between; }
   .collection-dropdown summary:focus-visible, nav > a:focus-visible, .collection-dropdown > div a:focus-visible { outline-offset: 2px; }
   .dropdown-indicator { color: var(--color-accent); font-size: 14px; transition: transform .2s ease; }
-  .collection-dropdown > div { position: static; width: 100%; max-width: none; margin: 0 0 6px; padding: 7px; justify-items: stretch; grid-template-columns: repeat(2, minmax(0, 1fr)); text-align: left; font-size: 11px; line-height: 1.3; gap: 4px; background: rgb(140 48 53 / 5%); border: 1px solid rgb(140 48 53 / 10%); border-radius: 12px; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .collection-dropdown > div { position: static; width: calc(100% - 28px); max-width: none; margin: 0 14px 6px; padding: 8px; justify-items: stretch; grid-template-columns: repeat(2, minmax(0, 1fr)); text-align: left; font-size: 11px; line-height: 1.35; gap: 4px 8px; background: transparent; border: 0; border-radius: 0; backdrop-filter: none; -webkit-backdrop-filter: none; }
   .collection-dropdown > div a { display: flex; align-items: center; min-height: 42px; padding: 8px 9px; border-radius: 8px; color: var(--color-secondary); }
   .collection-dropdown > div a:hover, .collection-dropdown > div a.active { color: var(--color-accent); background: var(--color-page); }
-  .collection-dropdown > div::before { content: none; }
+  .collection-dropdown > div::before { content: ''; }
   .home-introduction { min-height: auto; padding-block: 20px 28px; align-items: center; }
   .introduction-grid { width: calc(100% - 2 * var(--page-gutter)); display: flex; flex-direction: column-reverse; align-items: center; gap: 24px; }
   .introduction-portrait { width: min(72vw, 300px); max-width: 100%; }
