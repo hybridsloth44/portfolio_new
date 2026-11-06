@@ -16,14 +16,23 @@ export default function Layout() {
   const menuButtonRef = useRef(null);
   const navRef = useRef(null);
   const dropdownRef = useRef(null);
+  const closeTimerRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [menuClosing, setMenuClosing] = useState(false);
   const [workOpen, setWorkOpen] = useState(false);
   const [announcementVisible, setAnnouncementVisible] = useState(Boolean(site.announcement));
   useEffect(() => {
     const closeOutside = (event) => {
       const dropdown = dropdownRef.current;
       if (dropdown && !dropdown.contains(event.target)) dropdown.open = false;
-      if (!navRef.current?.contains(event.target) && !menuButtonRef.current?.contains(event.target)) setMenuOpen(false);
+      if (!navRef.current?.contains(event.target) && !menuButtonRef.current?.contains(event.target)) {
+        setMenuOpen(false);
+        setMenuClosing(false);
+        if (closeTimerRef.current) {
+          window.clearTimeout(closeTimerRef.current);
+          closeTimerRef.current = null;
+        }
+      }
     };
     document.addEventListener('pointerdown', closeOutside);
     return () => document.removeEventListener('pointerdown', closeOutside);
@@ -31,23 +40,45 @@ export default function Layout() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
     setMenuOpen(false);
+    setMenuClosing(false);
+    if (closeTimerRef.current) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
     navRef.current?.querySelectorAll('details[open]').forEach((details) => { details.open = false; });
     if (!initial.current) mainRef.current?.focus({ preventScroll: true });
     initial.current = false;
   }, [location.pathname]);
   useEffect(() => {
     if (!menuOpen) return undefined;
-    let previousY = window.scrollY;
-    const closeOnDownwardScroll = () => {
-      const currentY = window.scrollY;
-      if (currentY > previousY) {
-        navRef.current?.querySelectorAll('details[open]').forEach((details) => { details.open = false; });
-        setMenuOpen(false);
+    let previousWindowY = window.scrollY;
+    let previousNavY = navRef.current?.scrollTop ?? 0;
+    const closeOnDownwardScroll = (event) => {
+      const isNavScroll = event.currentTarget === navRef.current;
+      const currentY = isNavScroll ? (navRef.current?.scrollTop ?? 0) : window.scrollY;
+      const previousY = isNavScroll ? previousNavY : previousWindowY;
+      if (currentY > previousY + 1 && !closeTimerRef.current) {
+        setMenuClosing(true);
+        closeTimerRef.current = window.setTimeout(() => {
+          closeTimerRef.current = null;
+          navRef.current?.querySelectorAll('details[open]').forEach((details) => { details.open = false; });
+          setMenuOpen(false);
+          setMenuClosing(false);
+        }, 320);
       }
-      previousY = currentY;
+      if (isNavScroll) previousNavY = currentY;
+      else previousWindowY = currentY;
     };
     window.addEventListener('scroll', closeOnDownwardScroll, { passive: true });
-    return () => window.removeEventListener('scroll', closeOnDownwardScroll);
+    navRef.current?.addEventListener('scroll', closeOnDownwardScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', closeOnDownwardScroll);
+      navRef.current?.removeEventListener('scroll', closeOnDownwardScroll);
+      if (closeTimerRef.current) {
+        window.clearTimeout(closeTimerRef.current);
+        closeTimerRef.current = null;
+      }
+    };
   }, [menuOpen]);
   return <div className="site-shell">
     <CustomCursor />
@@ -61,8 +92,15 @@ export default function Layout() {
       else if (menuOpen) { setMenuOpen(false); menuButtonRef.current?.focus(); }
     }}>
       <Link className="wordmark" to="/" aria-label="Shreesh home">Shreesh.</Link>
-      <button ref={menuButtonRef} className="menu-toggle" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={menuOpen} aria-controls="primary-navigation" onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>
-      <nav ref={navRef} id="primary-navigation" aria-label="Main navigation" className={menuOpen ? 'is-open' : ''}>
+      <button ref={menuButtonRef} className="menu-toggle" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={menuOpen} aria-controls="primary-navigation" onClick={() => {
+        setMenuOpen(!menuOpen);
+        setMenuClosing(false);
+        if (closeTimerRef.current) {
+          window.clearTimeout(closeTimerRef.current);
+          closeTimerRef.current = null;
+        }
+      }}><span /><span /></button>
+      <nav ref={navRef} id="primary-navigation" aria-label="Main navigation" className={menuOpen ? `is-open${menuClosing ? ' is-closing' : ''}` : ''}>
         <details ref={dropdownRef} className="collection-dropdown"
           onPointerEnter={(event) => { if (event.pointerType === 'mouse' && window.matchMedia('(min-width: 768px) and (hover: hover) and (pointer: fine)').matches) event.currentTarget.open = true; }}
           onPointerLeave={(event) => { if (event.pointerType === 'mouse' && !event.currentTarget.contains(document.activeElement)) event.currentTarget.open = false; }}
